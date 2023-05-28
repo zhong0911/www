@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Antx - 搜索设置</title>
+    <meta name="application-name" content="Antx">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link rel="icon" href="https://image.antx.cc/logo/antx/favicon.ico" type="image/gif">
+    <script src="https://cdn.antx.cc/script/js/utils/Utils.js"></script>
+    <script src="https://cdn.antx.cc/libs/jquery/@new/jquery.min.js"></script>
+    <script src="https://cdn.antx.cc/libs/jquery-cookie/@new/jquery.cookie.min.js"></script>
+    <script src="https://cdn.antx.cc/libs/jquery-growl/@new/js/jquery.growl.js"></script>
+    <script src="https://cdn.antx.cc/libs/bootstrap/@new/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.antx.cc/libs/jquery-growl/@new/css/jquery.growl.css" rel="stylesheet">
+    <link href="https://cdn.antx.cc/libs/bootstrap/@new/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.antx.cc/libs/font-awesome/@new/css/font-awesome.min.css" rel="stylesheet">
+    <script src="/static/js/settings.js"></script>
+    <link href="/static/css/settings.css" rel="stylesheet">
+</head>
+<body>
+<div id="header" class="container text-end"></div>
+<div class="container mt-5" id="body">
+    <div class="container mt-5">
+        <div class="card mt-5">
+            <div class='card-body'>
+                <div>
+                    <p class="text-lg" id="title">
+                        <button type="button" id="back" class="row btn btn-sm"><i
+                                class="fa fa-arrow-left"></i></button>
+                        搜索设置
+                    </p>
+                </div>
+                <form action="">
+                    <div>
+                        <label for="engine" class="">搜索引擎:&nbsp;
+                            <select id="engine" name="engine">
+                                <option id="baidu" value="baidu">百度</option>
+                                <option id="sogou" value="sogou">搜狗</option>
+                                <option id="s360" value="s360">360</option>
+                                <option id="bing" value="bing">Bing</option>
+                                <option id="google" value="google">Google</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="pull-right">
+                        <button type="button" id="save" class="mt-5 row btn btn-sm btn-primary">
+                            <small>保存</small>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer" class="container"></div>
+</body>
+</html>
