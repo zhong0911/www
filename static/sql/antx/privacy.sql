@@ -17,3 +17,4 @@ create table privacy
 );
 
 INSERT INTO antx.privacy (uid, username, gender, birthday, job, primary_school, middle_school, university, company, location, hometown, email, phone) VALUES (10000, 'zhong', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+INSERT INTO antx.privacy (uid, username, gender, birthday, job, primary_school, middle_school, university, company, location, hometown, email, phone) VALUES (8426611, 'djdjd', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);

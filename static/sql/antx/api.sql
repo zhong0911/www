@@ -8,14 +8,14 @@ create table api
     introduction  text             null
 );
 
-INSERT INTO antx.api (id, name, address, request_times, introduction) VALUES (1, '0', '0', 14, '0');
-INSERT INTO antx.api (id, name, address, request_times, introduction) VALUES (2, 'myaddr', 'myaddr', 6, 'myaddr');
-INSERT INTO antx.api (id, name, address, request_times, introduction) VALUES (3, 'qrcode', 'qrcode', 4, 'qrcode');
+INSERT INTO antx.api (id, name, address, request_times, introduction) VALUES (1, '0', '0', 258, '0');
+INSERT INTO antx.api (id, name, address, request_times, introduction) VALUES (2, 'myaddr', 'myaddr', 15, 'myaddr');
+INSERT INTO antx.api (id, name, address, request_times, introduction) VALUES (3, 'qrcode', 'qrcode', 224, 'qrcode');
 INSERT INTO antx.api (id, name, address, request_times, introduction) VALUES (4, 'qqcard', 'qqcard', 0, 'qqcard');
 INSERT INTO antx.api (id, name, address, request_times, introduction) VALUES (5, 'phone', 'phone', 2, 'phone');
-INSERT INTO antx.api (id, name, address, request_times, introduction) VALUES (6, 'myhost', 'myhost', 2, 'myhost');
-INSERT INTO antx.api (id, name, address, request_times, introduction) VALUES (7, null, null, 0, null);
-INSERT INTO antx.api (id, name, address, request_times, introduction) VALUES (8, null, null, 0, null);
+INSERT INTO antx.api (id, name, address, request_times, introduction) VALUES (6, 'myhost', 'myhost', 4, 'myhost');
+INSERT INTO antx.api (id, name, address, request_times, introduction) VALUES (7, 'ipv4', 'ipv4', 13, 'ipv4');
+INSERT INTO antx.api (id, name, address, request_times, introduction) VALUES (8, 'dns', 'dns', 0, 'dns');
 INSERT INTO antx.api (id, name, address, request_times, introduction) VALUES (9, null, null, 0, null);
 INSERT INTO antx.api (id, name, address, request_times, introduction) VALUES (10, null, null, 0, null);
 INSERT INTO antx.api (id, name, address, request_times, introduction) VALUES (11, null, null, 0, null);
@@ -25,3 +25,5 @@ INSERT INTO antx.api (id, name, address, request_times, introduction) VALUES (14
 INSERT INTO antx.api (id, name, address, request_times, introduction) VALUES (15, null, null, 0, null);
 INSERT INTO antx.api (id, name, address, request_times, introduction) VALUES (16, null, null, 0, null);
 INSERT INTO antx.api (id, name, address, request_times, introduction) VALUES (17, null, null, 0, null);
+INSERT INTO antx.api (id, name, address, request_times, introduction) VALUES (18, null, null, 0, null);
+INSERT INTO antx.api (id, name, address, request_times, introduction) VALUES (19, null, null, 0, null);

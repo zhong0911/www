@@ -18,3 +18,4 @@ create table status
 );
 
 INSERT INTO antx.status (uid, username, status, reason, ip_1, ip_2, ip_3, ip_4, ip_5, ip_6, ip_7, ip_8, ip_9, ip_10) VALUES (10000, 'zhong', 1, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO antx.status (uid, username, status, reason, ip_1, ip_2, ip_3, ip_4, ip_5, ip_6, ip_7, ip_8, ip_9, ip_10) VALUES (8426611, 'djdjd', 1, null, null, null, null, null, null, null, null, null, null, null);

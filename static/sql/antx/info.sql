@@ -20,3 +20,4 @@ create table info
 );
 
 INSERT INTO antx.info (uid, ranking, username, avatar, signature, nickname, gender, birthday, job, primary_school, middle_school, university, company, location, hometown, email) VALUES (10000, 1, 'zhong', '1', 'Without personality, no signature', 'Adisaint', 'M', '2009-09-01', 'Develop', 'Quannan County Second Primary School', 'Quannan County Second Middle School', 'null', 'antx', 'china', 'china', 'zhong@antx.cc');
+INSERT INTO antx.info (uid, ranking, username, avatar, signature, nickname, gender, birthday, job, primary_school, middle_school, university, company, location, hometown, email) VALUES (8426611, 2, 'djdjd', '1', '', 'User_8426611', '', '1000-01-01', '', '', '', '', '', '', '', '257966051@qq.com');

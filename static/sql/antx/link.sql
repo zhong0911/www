@@ -10,9 +10,9 @@ create table link
     request_times   int        not null
 );
 
-INSERT INTO antx.link (id, short_link, long_link, status, generation_time, expiration_time, request_times) VALUES (1, '0', '0', 0, '2023-05-27 14:23:50', '2023-05-27 14:22:34', 5);
+INSERT INTO antx.link (id, short_link, long_link, status, generation_time, expiration_time, request_times) VALUES (1, '0', '0', 0, '2023-05-27 14:23:50', '2023-05-27 14:22:34', 14);
 INSERT INTO antx.link (id, short_link, long_link, status, generation_time, expiration_time, request_times) VALUES (2, 'cdn', 'https://cdn.antx.cc/', 1, '2023-04-29 15:43:37', '2099-12-31 23:59:59', 0);
-INSERT INTO antx.link (id, short_link, long_link, status, generation_time, expiration_time, request_times) VALUES (3, 'api', 'https://api.antx.cc/', 1, '2023-04-29 15:43:51', '2099-12-31 23:59:59', 0);
+INSERT INTO antx.link (id, short_link, long_link, status, generation_time, expiration_time, request_times) VALUES (3, 'api', 'https://api.antx.cc/', 1, '2023-04-29 15:43:51', '2099-12-31 23:59:59', 2);
 INSERT INTO antx.link (id, short_link, long_link, status, generation_time, expiration_time, request_times) VALUES (4, 'login', 'https://passport.antx.cc/login/', 1, '2023-04-29 15:44:25', '2099-12-31 23:59:59', 0);
 INSERT INTO antx.link (id, short_link, long_link, status, generation_time, expiration_time, request_times) VALUES (5, 'register', 'https://passport.antx.cc/register/', 1, '2023-04-29 15:44:55', '2099-12-31 23:59:59', 0);
 INSERT INTO antx.link (id, short_link, long_link, status, generation_time, expiration_time, request_times) VALUES (6, 'VVvaIo', 'http://antx.cc', 1, '2023-05-28 14:55:15', '2099-12-31 23:59:59', 2);
@@ -31,3 +31,17 @@ INSERT INTO antx.link (id, short_link, long_link, status, generation_time, expir
 INSERT INTO antx.link (id, short_link, long_link, status, generation_time, expiration_time, request_times) VALUES (19, '6JA2jt', 'https://antx.cc', 1, '2023-05-28 15:22:49', '2099-12-31 23:59:59', 0);
 INSERT INTO antx.link (id, short_link, long_link, status, generation_time, expiration_time, request_times) VALUES (20, 'UzSaCA', 'https://url.antx.cc', 1, '2023-05-28 15:23:20', '2099-12-31 23:59:59', 0);
 INSERT INTO antx.link (id, short_link, long_link, status, generation_time, expiration_time, request_times) VALUES (21, 'PVQ4cl', 'https://www.antx.cc', 1, '2023-05-28 15:24:01', '2099-12-31 23:59:59', 0);
+INSERT INTO antx.link (id, short_link, long_link, status, generation_time, expiration_time, request_times) VALUES (22, 'ob53gq', 'http://antx.cc', 1, '2023-05-28 18:28:36', '2099-12-31 23:59:59', 1);
+INSERT INTO antx.link (id, short_link, long_link, status, generation_time, expiration_time, request_times) VALUES (23, 'VurmbS', 'http://ugc.c', 1, '2023-05-28 20:21:29', '2099-12-31 23:59:59', 0);
+INSERT INTO antx.link (id, short_link, long_link, status, generation_time, expiration_time, request_times) VALUES (24, 'FyGkk5', 'http://antx.cc', 1, '2023-05-28 20:31:20', '2099-12-31 23:59:59', 1);
+INSERT INTO antx.link (id, short_link, long_link, status, generation_time, expiration_time, request_times) VALUES (25, 'ALS4.j', 'https://5201314.space', 1, '2023-05-30 19:31:24', '2099-12-31 23:59:59', 1);
+INSERT INTO antx.link (id, short_link, long_link, status, generation_time, expiration_time, request_times) VALUES (26, '8dESrJ', 'https://antx.cc', 1, '2023-05-31 19:03:08', '2099-12-31 23:59:59', 1);
+INSERT INTO antx.link (id, short_link, long_link, status, generation_time, expiration_time, request_times) VALUES (27, '520', '5201314.space', 1, '2023-06-02 20:48:05', '2099-12-31 23:59:59', 1);
+INSERT INTO antx.link (id, short_link, long_link, status, generation_time, expiration_time, request_times) VALUES (28, '5201314', '5201314.space', 1, '2023-06-02 20:48:30', '2099-12-31 23:59:59', 0);
+INSERT INTO antx.link (id, short_link, long_link, status, generation_time, expiration_time, request_times) VALUES (29, '520zjh', 'https://5201314.space', 1, '2023-06-02 20:49:25', '2099-12-31 23:59:59', 0);
+INSERT INTO antx.link (id, short_link, long_link, status, generation_time, expiration_time, request_times) VALUES (30, 'SWyRV.', 'http://antx.cc', 1, '2023-06-03 19:52:02', '2099-12-31 23:59:59', 0);
+INSERT INTO antx.link (id, short_link, long_link, status, generation_time, expiration_time, request_times) VALUES (31, 'itMhmY', 'https://antx.cc', 1, '2023-06-03 19:52:11', '2099-12-31 23:59:59', 1);
+INSERT INTO antx.link (id, short_link, long_link, status, generation_time, expiration_time, request_times) VALUES (32, 'qYd7WI', 'http://antx.cc', 1, '2023-06-03 20:04:19', '2099-12-31 23:59:59', 0);
+INSERT INTO antx.link (id, short_link, long_link, status, generation_time, expiration_time, request_times) VALUES (33, '2tIl2W', 'http://antx.cc', 1, '2023-06-03 20:05:26', '2099-12-31 23:59:59', 0);
+INSERT INTO antx.link (id, short_link, long_link, status, generation_time, expiration_time, request_times) VALUES (34, 'iUbKbh', 'https://hjkhjk.df/到上方', 1, '2023-06-04 11:24:47', '2099-12-31 23:59:59', 0);
+INSERT INTO antx.link (id, short_link, long_link, status, generation_time, expiration_time, request_times) VALUES (35, 'mYmeuU', 'https://antx.cc', 1, '2023-06-11 14:50:44', '2099-12-31 23:59:59', 1);

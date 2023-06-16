@@ -1,17 +1,24 @@
 $(document).ready(function () {
-    initIndexPage();
+    let lang = $.url.param("lang") ?? $.cookie('lang') ?? '';
+    if (languages.includes(lang)) {
+        $.cookie('lang', lang, {expires: 30, path: "/"});
+        $("#app").load(`/static/html/homepage/${lang}.html`, function () {
+            initIndexPage();
+        })
+    } else {
+        $.cookie('lang', 'zh_CN', {expires: 30, path: "/"});
+        into("https://www.antx.cc/");
+    }
 });
 
 function initIndexPage() {
-    $("#query").keyup(function () {
-        checkKeyWord();
-    });
-    initDarkMode();
-    initLanguage();
     initFooter();
+    initPageEvent();
+    initDarkMode();
     initUser();
     initMessage();
-    initChangLanguage();
+    initSearchSettings();
+    initChangeLang();
 }
 
 function initDarkMode() {
@@ -22,50 +29,39 @@ function initDarkMode() {
     }
 }
 
-languages = ['zh-cn', 'en-us', 'fr-fr'];
+languages = ['zh_CN', 'en_US', 'fr_FR'];
 
 
-function initLanguage() {
-    let lang = $.url.param("lang");
-    if (lang) {
-        if (languages.includes(lang)) {
-            $.cookie('lang', lang, {expires: 30, path: "/"});
-            changLang(lang);
-        } else {
-            $.cookie('lang', 'zh-cn', {expires: 30, path: "/"});
-            into("https://www.antx.cc/");
-        }
-    } else {
-        lang = $.cookie('lang');
-        if (lang) {
-            changLang(lang);
-        } else {
-            $.cookie('lang', 'zh-cn', {expires: 30, path: "/"});
-            into("https://www.antx.cc/");
-        }
+function initPageEvent() {
+    $("#query").keyup(function () {
+        checkKeyWord();
+    });
+    let query = $.url.param('q');
+    if (query) {
+        let engine = $.url.param('e') ? $.url.param('e') : 'baidu';
+        search(query, engine);
     }
-}
-
-function changLang(lang) {
-    switch (lang) {
-        case "zh-cn": {
-            changLanguage(lang);
-            break;
+    $("#search-form").submit(
+        function (event) {
+            search2();
+            event.preventDefault();
         }
-        case "en-us": {
-            changLanguage(lang);
-            break;
-        }
-        default: {
-            $.cookie('lang', 'zh-cn', {expires: 30, path: "/"});
-            into("https://www.antx.cc/");
-            break;
-        }
-    }
+    );
+    $("#go").click(function () {
+        search2();
+    });
+    $("#save").click(function () {
+        saveSearchSettings();
+    });
+    $("#back").click(function () {
+        into("/");
+    });
 }
 
 function initFooter() {
-    $("#footer").load("https://www.antx.cc/static/html/footer/footer.html");
+    $.get("https://www.antx.cc/static/html/footer/footer.html", function (data) {
+        $("footer").append(data);
+    });
 }
 
 function initUser() {
@@ -104,10 +100,10 @@ function checkKeyWord() {
     let lang = $.cookie('lang');
     if (isUrl(keyword)) {
         switch (lang) {
-            case "zh-cn":
+            case "zh_CN":
                 $(".text-search").text("访问");
                 break;
-            case"en-us":
+            case"en_US":
                 $(".text-search").text("Visit");
                 break;
             default:
@@ -116,10 +112,10 @@ function checkKeyWord() {
         }
     } else {
         switch (lang) {
-            case "zh-cn":
+            case "zh_CN":
                 $(".text-search").text("搜索");
                 break;
-            case"en-us":
+            case"en_US":
                 $(".text-search").text("Search");
                 break;
             default:
@@ -127,4 +123,95 @@ function checkKeyWord() {
                 break;
         }
     }
+}
+
+function search(query, engine) {
+    if (query) {
+        if (isUrl(query)) {
+            if (!query.startsWith("https:??") || !query.startsWith("http://")) into("http://" + query);
+            else into(query);
+        } else if (engine === "baidu") {
+            into("https://www.baidu.com/s?wd=" + encodeURIComponent(query));
+        } else if (engine === "bing") {
+            into("https://cn.bing.com/search?q=" + encodeURIComponent(query));
+        } else if (engine === "sogou") {
+            into("https://www.sogou.com/web?query=" + encodeURIComponent(query));
+        } else if (engine === "360" || engine === "s360") {
+            into("https://www.so.com/s?q=" + encodeURIComponent(query));
+        } else if (engine === "google") {
+            into("https://www.google.com/search?q=" + encodeURIComponent(query));
+        } else {
+            into("https://www.baidu.com/s?wd=" + encodeURIComponent(query));
+        }
+    }
+}
+
+function search2() {
+    let query = $("#query").val();
+    let engine = $.cookie("engine") ? $.cookie("engine") : 'baidu';
+    search(query, engine);
+}
+
+function submit() {
+    search2()
+    return false;
+}
+
+function initChangeLang() {
+    $("#zh_CN").click(function () {
+        into('/index.html?lang=zh_CN')
+    });
+    $("#en_US").click(function () {
+        into('/index.html?lang=en_US')
+    });
+}
+
+function initSearchSettings() {
+    $("#search-settings").click(function () {
+        $("#search-settings-modal-div").load("/static/html/settings/search-settings.html", function () {
+            $("#search-settings-modal").modal("show");
+            $("#engine").val($.cookie("engine") ? $.cookie("engine") : 'baidu');
+            $("#save-search-settings").click(function () {
+                saveSearchSettings();
+            });
+        });
+    });
+    $("#display-settings").click(function () {
+        $("#display-settings-modal-div").load("/static/html/settings/display-settings.html", function () {
+            $("#display-settings-modal").modal("show");
+            if ($.cookie('dark_mode') === 'on') $('#dark-mode').prop("checked", true);
+            $("#save-display-settings").click(function () {
+                saveDisplaySettings();
+            });
+        });
+    });
+    $("#advanced-settings").click(function () {
+        $("#advanced-settings-modal-div").load("/static/html/settings/advanced-settings.html", function () {
+            $("#advanced-settings-modal").modal("show");
+        });
+    });
+}
+
+
+function saveSearchSettings() {
+    let engine = $("#engine").val();
+    $.cookie('engine', engine, {expires: 30, path: "/"});
+    $prompt.success("保存成功");
+    setTimeout(function () {
+        $("#search-settings-modal").modal("hide");
+    }, 500);
+}
+
+function saveDisplaySettings() {
+    if ($("#dark-mode").is(":checked")) {
+        $("body").addClass("dark-mode");
+        $.cookie('dark_mode', 'on', {expires: 30, path: "/"});
+    } else {
+        $("body").removeClass("dark-mode");
+        $.cookie('dark_mode', 'off', {expires: 30, path: "/"});
+    }
+    $prompt.success("保存成功");
+    setTimeout(function () {
+        $("#display-settings-modal").modal("hide");
+    }, 500);
 }

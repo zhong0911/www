@@ -1,0 +1,113 @@
+<header class="mx-4">
+    <nav class="navbar navbar-expand-sm">
+        <a class="navbar-brand" href="https://www.antx.cc/">
+            <img src="https://image.antx.cc/logo/antx/favicon.ico" alt="Logo" width="32px" height="32px">
+        </a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="btn btn-sm btn-custom me-3" target="_blank"
+                                        href="https://api.antx.cc/"><small>API</small></a></li>
+                <li class="nav-item"><a class="btn btn-sm btn-custom me-3" target="_blank"
+                                        href="https://blog.antx.cc/"><small>Blog</small></a></li>
+                <li class="nav-item"><a class="btn btn-sm btn-custom me-3" target="_blank"
+                                        href="https://tools.antx.cc/"><small>Tool</small></a>
+                </li>
+                <li class="nav-item"><a class="btn btn-sm btn-custom me-3" target="_blank"
+                                        href="https://translate.antx.cc/"><small>Translate</small></a>
+                </li>
+                <li class="nav-item"><a class="btn btn-sm btn-custom me-3" target="_blank"
+                                        href="https://image.antx.cc/"><small>Picture</small></a>
+                </li>
+                <li class="nav-item"><a class="btn btn-sm btn-custom me-3" target="_blank"
+                                        href="https://video.antx.cc/"><small>Video</small></a>
+                </li>
+                <li class="nav-item"><a class="btn btn-sm btn-custom me-3" target="_blank"
+                                        href="https://shortlink.antx.cc/"><small
+                >ShortLink</small></a></li>
+                <li class="nav-item"><a class="btn btn-sm btn-custom me-3" target="_blank" href="/about"><small
+                >About</small></a></li>
+                <li class="nav-item dropdown me-3">
+                    <button class="btn btn-sm btn-custom dropdown-toggle" id="more" data-bs-toggle="dropdown"><small
+                    >More</small>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item btn btn-sm" target="_blank" href="https://developer.antx.cc/"><small
+                        >Developer</small></a>
+                        <a class="dropdown-item btn btn-sm" target="_blank"
+                           href="https://www.antx.cc/friendly-links/"><small
+                        >Friendly Links</small></a>
+                        <a class="dropdown-item btn btn-sm" target="_blank"
+                           href="https://www.antx.cc/partner/"><small
+                        >Partner</small></a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown me-3">
+                    <button class="btn btn-sm btn-custom dropdown-toggle" id="language"
+                            data-bs-toggle="dropdown"><small
+                    >Languages</small>
+                    </button>
+                    <div class="dropdown-menu">
+                        <button id="zh_CN" class="dropdown-item btn btn-sm" data-lang="zh_CN">
+                            <small>中文简体</small></button>
+                        <button id="en_US" class="dropdown-item btn btn-sm" data-lang="en_US">
+                            <small>English</small>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <form class="d-none d-sm-block text-end me-3">
+            <div class="input-group">
+                <input type="search" id="header-search"
+                       class="form-control small form-control-sm header-search" placeholder="Search on this site"
+                       value="">
+                <button class="btn btn-sm btn-secondary">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </form>
+        <div class="dropdown me-3">
+            <button type="button" class="btn btn-sm" data-bs-toggle="dropdown">
+                <small>Settings</small>
+            </button>
+            <div class="dropdown-menu">
+                <button id="search-settings" class="dropdown-item btn btn-sm"><small
+                >Search Settings</small></button>
+                <button id="display-settings" class="dropdown-item btn btn-sm"><small
+                >Display Settings</small></button>
+                <button id="advanced-settings" class="dropdown-item btn btn-sm"><small
+                >Advanced Settings</small>
+                </button>
+            </div>
+        </div>
+        <div class="small" id="user">
+            <a id="login" class="me-3 btn btn-sm btn-primary">
+                <small>Login</small>
+            </a>
+        </div>
+    </nav>
+</header>
+<main class="mx-3 mt-2">
+    <div id="body" class="container mt-lg-5">
+        <h1 id="welcome" class="text-center">
+            <span><i class="fa fa-search"></i> Antx</span>
+        </h1>
+        <div class="container">
+            <form class="container" action="/static/php/search.php" id="search-form" name="search-form" method="post">
+                <label class="form-label" for="query"></label>
+                <div class="container input-group">
+                    <input type="text" class="form-control input query" id="query"
+                           placeholder="Enter a keyword or enter a URL"
+                           name="query" value=""/>
+                    <button class="btn btn-primary" type="button" id="go">
+                        <small>
+                            <i class="fa fa-search"></i> <span class="text-search">Search</span>
+                        </small>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+<footer></footer>
