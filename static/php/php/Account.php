@@ -111,7 +111,7 @@ function addUserPrivacy($uid, $username): bool
 
 function queryAccountData($sql, $key): string
 {
-    $conn = mysqli_connect("mysql.db.antx.cc", "root", "zhong0911MySQL", "data");
+    $conn = mysqli_connect("mysql.db.antx.cc", "root", getenv("ANTX_MSQL_PASSWORD"), "data");
     $result = mysqli_query($conn, $sql);
     $res = "";
     while ($row = mysqli_fetch_array($result)) {
@@ -124,7 +124,7 @@ function queryAccountData($sql, $key): string
 
 function insertData($sql): bool
 {
-    $conn = mysqli_connect("mysql.db.antx.cc", "root", "zhong0911MySQL", "data");
+    $conn = mysqli_connect("mysql.db.antx.cc", "root", getenv("ANTX_MSQL_PASSWORD"), "data");
     $res = false;
     if ($conn->query($sql) === TRUE) {
         $res = true;
