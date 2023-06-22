@@ -7,7 +7,7 @@ require './libs/mail/Exception.php';
 require './libs/mail/PHPMailer.php';
 
 error_reporting(E_ERROR | E_PARSE);
-header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Origin: ');
 session_set_cookie_params(0, '/', '.antx.cc');
 session_start();
 
